@@ -2,7 +2,6 @@ type       = process
 command    = /usr/bin/podman run --replace --pull=newer \
 	--name headplane \
 	--network=pasta:--map-gw,-T,58857 \
-	--add-host headscale.ebra.dev:169.254.1.2 \
 	-p 127.0.0.1:56977:3000 \
 	-v /etc/localtime:/etc/localtime:ro \
 	-v /home/ebrahim/containers/headscale/headplane/config.yaml:/etc/headplane/config.yaml:ro \

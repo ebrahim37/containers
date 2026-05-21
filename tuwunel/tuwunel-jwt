@@ -1,7 +1,6 @@
 type       = process
 command    = /usr/bin/podman run --replace --pull=newer \
 	--name tuwunel-jwt \
-	--add-host chat-livekit.ebra.dev:169.254.1.2 \
 	--env-file /home/ebrahim/containers/tuwunel/jwt.env \
 	-p 127.0.0.1:60356:8080 \
 	ghcr.io/element-hq/lk-jwt-service
