@@ -1,52 +1,61 @@
 hostname: vps1
 base_domain: ebra.dev
 public_ipv4: 152.53.167.145
-public_ipv6: "2a0a:4cc0:2000:9c0b::1"
-ssh_authorized_key: "ssh-ed25519 CHANGE_ME"
-containers_git_repo: https://example.com/CHANGE_ME/containers.git
+public_ipv6: 2a0a:4cc0:2000:9c0b::1
+ssh_authorized_key: ssh-ed25519 AAAAC3NzaC1lZDI1...
+containers_git_repo: https://github.com/beans42/containers.git
 
 headscale_domain: ebra.devices
 headscale_ipv4_prefix: 100.64.0.0/24
 tailnet_ipv4: 100.64.0.2
 
-headscale_oidc_client_id: CHANGE_ME
-headscale_oidc_client_secret: CHANGE_ME
-tinyauth_oidc_client_id: CHANGE_ME
-tinyauth_oidc_client_secret: CHANGE_ME
-tuwunel_oidc_client_id: CHANGE_ME
-tuwunel_oidc_client_secret: CHANGE_ME
+# create these in Pocket ID settings > Administration > OIDC Clients
+headscale_oidc_client_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+headscale_oidc_client_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+tinyauth_oidc_client_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+tinyauth_oidc_client_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+tuwunel_oidc_client_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+tuwunel_oidc_client_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-cloudflare_api_token: CHANGE_ME
-csv_auth_token: CHANGE_ME
-matrix_sender_auth_token: CHANGE_ME
-croc_password: CHANGE_ME
-glance_secret_token: CHANGE_ME
+# for caddy DNS challenge
+cloudflare_api_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# caddy header auth tokens for internal tools
+csv_auth_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+matrix_sender_auth_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+croc_password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+glance_secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-headplane_cookie_secret: CHANGE_ME
-headplane_pre_authkey: CHANGE_ME
-headplane_api_key: CHANGE_ME
+# reconf headscale/plane
+headplane_cookie_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+headplane_pre_authkey: hskey-auth-...
+headplane_api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-matrix_username: CHANGE_ME
-matrix_password: CHANGE_ME
-matrix_recovery_key: "CHANGE_ME"
+matrix_username: paulie
+matrix_password: xxxxxxxxxxxxxxxx
+matrix_recovery_key: xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-pocketid_encryption_key: CHANGE_ME
-rybbit_better_auth_secret: CHANGE_ME
-tailscale_auth_key: CHANGE_ME
+# openssl rand -base64 32
+pocketid_encryption_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# openssl rand -hex 32
+rybbit_better_auth_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+tailscale_auth_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 tinyauth_admin_username: ebrahim
-tinyauth_admin_email: CHANGE_ME
-tinyauth_admin_password_hash: 'CHANGE_ME'
-tinyauth_admin_totp_hash: CHANGE_ME
-tinyauth_guest_password_hash: 'CHANGE_ME'
+tinyauth_admin_email: admin@example.com
+# https://tinyauth.app/docs/reference/cli/#create-user-command
+tinyauth_admin_password_hash: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+tinyauth_admin_totp_hash: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+tinyauth_guest_password_hash: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-livekit_key: CHANGE_ME
-livekit_secret: CHANGE_ME
-turn_secret: CHANGE_ME
+livekit_key: xxxxxxxxxxxxxxx
+livekit_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+turn_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-vaultwarden_admin_token: CHANGE_ME
-smtp_username: CHANGE_ME
-smtp_password: CHANGE_ME
-smtp_from: CHANGE_ME
-vaultwarden_push_installation_id: CHANGE_ME
-vaultwarden_push_installation_key: CHANGE_ME
+vaultwarden_admin_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# https://www.reddit.com/r/SaaS/s/4NOqHfwgDq
+smtp_username: xxxxxxxx@gmail.com
+smtp_password: xxxxxxxxxxxxxxxx
+smtp_from: vaultwarden@example.com
+# https://bitwarden.com/host/
+vaultwarden_push_installation_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+vaultwarden_push_installation_key: xxxxxxxxxxxxxxxxxxxx
