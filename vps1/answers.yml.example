@@ -19,14 +19,15 @@ tuwunel_oidc_client_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # for caddy DNS challenge
 cloudflare_api_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 # caddy header auth tokens for internal tools
 csv_auth_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 matrix_sender_auth_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 croc_password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 glance_secret_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 headplane_cookie_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-headplane_pre_authkey: hskey-auth-...
 headplane_api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 matrix_username: paulie
@@ -42,9 +43,9 @@ tailscale_auth_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 tinyauth_admin_username: ebrahim
 tinyauth_admin_email: admin@example.com
 # https://tinyauth.app/docs/reference/cli/#create-user-command
-tinyauth_admin_password_hash: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+tinyauth_admin_password_hash: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 tinyauth_admin_totp_hash: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-tinyauth_guest_password_hash: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+tinyauth_guest_password_hash: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 livekit_key: xxxxxxxxxxxxxxx
 livekit_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
