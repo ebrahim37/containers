@@ -1,7 +1,7 @@
 [Unit]
 Description=Tailscale client
-After=network-online.target
-Wants=network-online.target
+Wants=network-online.target headscale.service
+After=network-online.target headscale.service
 
 [Container]
 ContainerName=tailscale-client
