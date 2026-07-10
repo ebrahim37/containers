@@ -1,3 +1,7 @@
+{
+	grace_period 5s
+}
+
 (protected) {
 	route {args[0]} {
 		forward_auth host.containers.internal:19491 {

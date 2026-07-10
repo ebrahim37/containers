@@ -49,9 +49,30 @@ const app = new Elysia()
 		}),
 	}).listen(8080);
 
-const stopApp = () => { app.stop(); process.exit(0); }
-process.on('SIGINT', stopApp);
-process.on('SIGTERM', stopApp);
+let stopping = false;
+
+async function stopApp() {
+	if (stopping)
+		return;
+
+	stopping = true;
+
+	try {
+		await app.stop();
+
+		const stopClient = (client as unknown as { stop?: () => unknown }).stop;
+		if (typeof stopClient === 'function')
+			await stopClient.call(client);
+
+		process.exitCode = 0;
+	} catch (error) {
+		console.error(error);
+		process.exitCode = 1;
+	}
+}
+
+process.once('SIGINT', () => void stopApp());
+process.once('SIGTERM', () => void stopApp());
 
 async function getToken() {
 	const existing = storage.readValue('accessToken');
