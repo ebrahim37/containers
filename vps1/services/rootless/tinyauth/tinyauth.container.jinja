@@ -5,7 +5,7 @@ After=pocketid.service
 
 [Container]
 ContainerName=tinyauth
-Image=ghcr.io/tinyauthapp/tinyauth:v5
+Image=ghcr.io/tinyauthapp/tinyauth:v5-distroless
 Pull=newer
 Network=pasta:--map-host-loopback,169.254.1.3
 AddHost=host.containers.internal:169.254.1.3
