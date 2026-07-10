@@ -6,9 +6,9 @@
 	},
 	"dependencies": {
 		"another-json": "^0.2.0",
-		"elysia": "^1.4.28",
+		"elysia": "^1.4.29",
 		"matrix-bot-sdk": "^0.8.0",
-		"matrix-js-sdk": "^41.5.0-rc.0",
+		"matrix-js-sdk": "^41.9.0",
 		"tweetnacl": "^1.0.3"
 	},
 	"trustedDependencies": [
