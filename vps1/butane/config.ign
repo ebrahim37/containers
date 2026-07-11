@@ -45,7 +45,7 @@
         "path": "/etc/NetworkManager/system-connections/public-uplink.nmconnection",
         "contents": {
           "compression": "gzip",
-          "source": "data:;base64,H4sIAAAAAAAC/3SN0UoDMRBF3+db3DizhKgT8iWlD2ky2uB2ErKJ4N9LXfBFyoXL4cLhnlJVlTRK1TOUHNq8bCUts21FP2F8NwkyrtJVBsCptC97hpuMa80hzlGhfGjtstx5ybqH0afAHcj8xpNBg4b8Ybs/+xZ1xg1izl32ncIaMbJNCXlFRH5LeGGmZ2ef3uUVmenx1erQsX1BPIqJiPy/EZE8/AQAAP//ZT/tge8AAAA="
+          "source": "data:;base64,H4sIAAAAAAAC/3SNXWrDMBCE3/cstbtrjNuu0UlCHjbSuhGVV0Y/hdy+pIG+lDAwDDPwzclnM/UtZjtDDO7olxT90I8U7Qva7VCn7arFtAGc4vE9n2HXds3BSW8ZdrkNm8TkNklVIX5aLjrcpyFYda10hXug8VcrjTjiSOsDtvzBdrEuCSSEorWSmwSFZ++RJ0TkD48XZnpd5pdN35GZnl9NCy48vyE+jImI1n8lIq3wEwAA//+rMsDH/gAAAA=="
         },
         "mode": 384
       },
