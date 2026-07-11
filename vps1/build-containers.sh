@@ -15,6 +15,7 @@ root_quadlet_dir="/etc/containers/systemd/${host_name}-root"
 rootless_quadlet_dir="$HOME/.config/containers/systemd/${host_name}-rootless"
 
 {
+	echo "_preserve_symlinks: true"
 	echo "_envops:"
 	echo "  undefined: jinja2.StrictUndefined"
 } > "$copier_config"
