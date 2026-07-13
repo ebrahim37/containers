@@ -31,12 +31,10 @@ rootless_quadlet_dir="$HOME/.config/containers/systemd/${host_name}-rootless"
 	echo "_envops:"
 	echo "  undefined: jinja2.StrictUndefined"
 } > "$host_dir/services/copier.yml"
-
-shared_link="$host_dir/services/root/artix-cnc/shared"
-if [ ! -L "$shared_link" ]; then
-	rm -rf "$shared_link"
-	ln -s "../../../../shared" "$shared_link"
-fi
+{
+	echo "_envops:"
+	echo "  undefined: jinja2.StrictUndefined"
+} > "$repo_dir/shared/copier.yml"
 
 rm -rf "$dest"
 podman run --rm --interactive \
@@ -54,8 +52,9 @@ podman run --rm --interactive \
 			.venv/bin/python -m pip install copier
 		fi
 		.venv/bin/copier copy --quiet --data-file /answers.yml "$1/services" "$1/services-dist"
+		.venv/bin/copier copy --quiet --data-file /answers.yml shared "$1/services-dist/root/artix-cnc/shared"
 	' sh "$host_name"
-rm -f "$data_file" "$host_dir/services/copier.yml"
+rm -f "$data_file" "$host_dir/services/copier.yml" "$repo_dir/shared/copier.yml"
 
 if [ -d "$root_dist" ]; then
 	sudo rm -rf "$root_quadlet_dir"
