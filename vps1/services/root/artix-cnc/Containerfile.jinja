@@ -69,7 +69,7 @@ RUN git clone --depth=1 https://aur.archlinux.org/yay-bin.git /tmp/yay-bin \
 	&& chown -R ebrahim:ebrahim /tmp/yay-bin \
 	&& su - ebrahim -c 'cd /tmp/yay-bin && makepkg -i --noconfirm --cleanbuild --clean' \
 	&& rm -rf /tmp/yay-bin \
-	&& su - ebrahim -c 'ya -Yc ya -Scc' \
+	&& su - ebrahim -c '/home/ebrahim/scripts/ya -Yc /home/ebrahim/scripts/ya -Scc' \
 	&& su - ebrahim -c 'curl -fsSL https://bun.sh/install | bash' \
 	&& su - ebrahim -c 'bun install -g http-server @openai/codex'
 
