@@ -56,6 +56,7 @@ RUN install -d -m 0700 -o ebrahim -g ebrahim /home/ebrahim/.ssh \
 	&& ln -sf /host/home/core/infra-template/vps1/volumes/caddy-data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.ebra.dev/wildcard_.ebra.dev.crt /home/ebrahim/ssl/fullchain.pem \
 	&& ln -sf /host/home/core/infra-template/vps1/volumes/caddy-data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/wildcard_.ebra.dev/wildcard_.ebra.dev.key /home/ebrahim/ssl/privkey.pem \
 	&& chown -h ebrahim:ebrahim /home/ebrahim/ssl/fullchain.pem /home/ebrahim/ssl/privkey.pem \
+	&& chmod +x /home/ebrahim/scripts/* \
 	&& rm -f /home/ebrahim/.bash_logout
 
 RUN croc_tmp=$(mktemp -d) \
