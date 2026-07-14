@@ -79,6 +79,29 @@ sudo_sync_tree() {
 	sudo cp -a --no-preserve=context "$sync_src"/. "$sync_dest"/
 }
 
+relabel_rootless_mounts() {
+	quadlet_dir=$1
+
+	find "$quadlet_dir" -name '*.container' -type f | while IFS= read -r unit; do
+		container_name=$(
+			awk -F= '$1 == "ContainerName" { print $2; exit }' "$unit"
+		)
+		[ -n "$container_name" ] || container_name=$(basename "$unit" .container)
+
+		mount_label=$(podman inspect --format '{{ .MountLabel }}' "$container_name" 2>/dev/null || true)
+		[ -n "$mount_label" ] || continue
+
+		unit_dir=$(dirname "$unit")
+		awk -F= '$1 == "Volume" { print substr($0, index($0, "=") + 1) }' "$unit" |
+			while IFS= read -r volume; do
+				source=${volume%%:*}
+				case $source in
+					./*) chcon -R "$mount_label" "$unit_dir/${source#./}" 2>/dev/null || true ;;
+				esac
+			done
+	done
+}
+
 {
 	cat "$repo_dir/answers.yml"
 	printf '\n'
@@ -114,6 +137,7 @@ sudo chown -R root:root "$root_quadlet_dir"
 sudo restorecon -RF "$root_quadlet_dir" 2>/dev/null || true
 
 sync_tree "$dest/rootless" "$HOME/.config/containers/systemd/${host_name}-rootless"
+relabel_rootless_mounts "$HOME/.config/containers/systemd/${host_name}-rootless"
 
 install -d -m 0755 "$host_dir/volumes"
 systemctl --user daemon-reload || true
