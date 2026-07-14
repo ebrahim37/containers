@@ -72,8 +72,8 @@ progress() {
 }
 
 {
-	add_units rootful "~/infra-template/$hostname/services-dist/root"
-	add_units rootless "~/infra-template/$hostname/services-dist/rootless"
+	add_units rootful "$HOME/infra-template/$hostname/services-dist/root"
+	add_units rootless "$HOME/infra-template/$hostname/services-dist/rootless"
 } | sort -u > "$units_tmp"
 
 total=$(wc -l < "$units_tmp" | tr -d ' ')

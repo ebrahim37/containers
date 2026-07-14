@@ -27,5 +27,5 @@ list_scope() {
 	done
 }
 
-list_scope rootful "~/infra-template/$hostname/services-dist/root"
-list_scope rootless "~/infra-template/$hostname/services-dist/rootless"
+list_scope rootful "$HOME/infra-template/$hostname/services-dist/root"
+list_scope rootless "$HOME/infra-template/$hostname/services-dist/rootless"
