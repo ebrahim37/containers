@@ -1,8 +1,0 @@
-#!/bin/sh
-PORT=$1
-shift
-sudo ~/.bun/bin/http-server "$@" \
-	-a {{ vps1.tailnet_ipv4 }} \
-	-p $PORT \
-	--log-ip \
-	--robots

@@ -1,0 +1,12 @@
+#!/bin/sh
+PORT=$1
+shift
+
+IP=$(ip -4 -o addr show dev tailscale0 scope global | awk '{ sub(/\/.*/, "", $4); print $4; exit }')
+[ -n "$IP" ] || { echo "tailscale0 has no IPv4 address" >&2; exit 1; }
+
+sudo ~/.bun/bin/http-server "$@" \
+	-a "$IP" \
+	-p "$PORT" \
+	--log-ip \
+	--robots
