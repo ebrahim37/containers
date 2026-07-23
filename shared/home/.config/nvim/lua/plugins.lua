@@ -27,7 +27,7 @@ require('nvim-web-devicons').setup{}
 require('mason').setup()
 require('mason-tool-installer').setup({
 	ensure_installed = {
-		'clangd',
+		{ 'clangd', condition = function() return vim.fn.executable('clangd') == 0 end },
 		'typescript-language-server',
 		'tailwindcss-language-server',
 		'oxlint',
